@@ -1,0 +1,278 @@
+Shell Scripting
+https://github.com/easyawslearn/Shell-Script-Tutorial
+
+https://www.udemy.com/course/introduction-to-linux-shell-scripting-in-hindi/
+
+i-insert
+Escp + :wq! - write quit save
+
+Type of Store Procedure
+
+to create script >vi example.sh (vi_filename)
+
+echo "this is my first"
+
+./example.sh
+this is my first
+
+to see file permission
+ls -l
+
+to see all files
+ls
+
+to give execution permission to all users
+chmod +x example.sh
+
+r-4
+w-2
+x-1
+
+chmod 111 example.sh - execution
+chmod 222 example.sh - write
+chmod 444 example.sh - read
+chmod 777 example.sh - all
+chmod 741 example.sh - all
+
+cat - to see file
+
+vi - editor - to edit
+
+./example.sh - ./ to execute from present directory
+
+pwd - current working directory
+present working directory
+
+cd . - ?
+cd .. - change step down dir
+/home/folder1/ - forwarding in dir
+
+
+what is echo 
+$ type echo
+echo is a shell builtin - built in command
+
+to get echo location
+$ type -a echo
+echo is a shell builtin
+echo is /bin/echo
+
+
+variable::
+$ vi example2.sh
+i
+Name="Jigar"
+
+echo "Hello Mr ${Name}"
+Escp + wq!
+
+$ chmod 777 example2.sh 
+$ ./example2.sh
+Hello Mr Jigar
+
+$ cat example2.sh 
+Name="Jigar"
+
+echo "Hello Mr ${Name}"
+
+$ vi example3.sh
+
+$ cat example3.sh 
+Name="Jack"
+echo My name is ${Name}
+
+Name="Cat"
+echo My name is ${Name}
+
+$ sh example3.sh 
+My name is Jack
+My name is Cat
+
+
+$ cat example3.sh 
+#This is for comment
+Name="Jack"
+NAME="Jigar"
+name="James"
+echo My name is ${Name}
+echo My name is ${NAME}
+echo My name is ${name}
+
+$ sh example3.sh 
+My name is Jack
+My name is Jigar
+My name is James
+
+System info
+to get date $ date
+to get hostname of system $ hostname
+to display kernal information $ uname -r
+uname -m
+
+to get disk utility $ df -h
+to get display memory utili $ free -h
+
+to get user
+$ whoami
+jigarsony
+
+#if loop 
+cat ifloop.sh 
+#if loop example
+
+a=10
+b=10
+
+if [ $a == $b ]
+then
+	echo "a=b  a is similar b"
+else
+	echo "a!=b a is differ from b"
+fi
+
+
+#if loop example-2
+
+if [ $a != $b ]
+then
+	echo "a!=b a is differ from b"
+else
+	echo "a=b a is similar to b"
+fi
+
+
+cat ifllop1.sh 
+
+username=$(whoami)
+echo "${username}"
+
+if [[ "${username}" == "jigarsony" ]];
+then
+	echo "you are logged in"
+else
+	echo "you are not logged in"
+fi
+
+
+#For Loop
+$ cat forloop.sh 
+
+#for loop example 1
+
+for i in 1 2 3 4 5
+do
+	echo "hello $i"
+done
+
+#for loop example 2
+
+for i  in {1..5}
+do
+	echo "Example 2 - $i"
+done
+
+
+#for loop example 3
+
+for (( i=1; i<=5; i++ ))
+do
+	echo "example-3 $i"
+done
+
+
+#While loop
+$ cat whileloop.sh 
+a=0
+
+while [ $a -lt 10 ]
+do
+	echo $a
+	a=`expr $a + 1`
+
+
+touch to create file
+
+copy all file from dir a to b
+$cp a/* b/
+
+remove all file from a dir
+$rm -f a/*
+
+listing all files from a dir
+$ls a/
+
+copy all file which .txt extension from dir a to b
+$cp a/*.txt b/
+
+
+--#!/bin/bash
+
+# Comment Single line
+
+
+echo -e "Directory a created \n"
+mkdir a
+
+echo -e "Directory b created \n"
+mkdir b
+
+echo -e "Directory b created \n"
+mkdir c
+
+echo -e "Directory b created \n"
+mkdir d
+
+echo -e "Creating 1.txt 2.txt 3.txt to a directory \n"
+touch a/1.txt a/2.txt a/3.txt
+
+echo -e "listing of files in a directory "
+ls a/
+
+echo -e "\n Copying file from a directory to b using cp (a/* b/) \n"
+cp a/* b/
+
+echo -e "listing of files in b directory "
+ls b/
+
+echo -e "\n removing all files from b directory using (rm -f /b*) \n"
+rm -f b/*
+
+echo -e "listing of files in b directory "
+ls b/
+
+echo -e "\n copying all files from a directory using extension ( cp a/*.txt c/) \n"
+cp a/*.txt c/
+
+echo -e "listing of files in c directory "
+ls c/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
